@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { eventRef } from '@/firebase/firebase';
 export default {
   name: 'app'
 }

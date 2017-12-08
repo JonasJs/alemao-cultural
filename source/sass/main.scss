@@ -1,4 +1,28 @@
+//Font
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+
 *{
 	margin: 0;
 	padding:0;
+	font-family: 'Montserrat', sans-serif;
+	a:hover{
+		text-decoration: none;
+	}
+}
+
+//variables
+@import "variables";
+
+
+//Components Shared
+@import "components/shared/navigation";
+
+//Styles Global
+
+.buttonBase{
+	width:200px;
+	height:40px;
+	font-size:14px;
+	font-weight:500;
+	cursor:pointer;
 }

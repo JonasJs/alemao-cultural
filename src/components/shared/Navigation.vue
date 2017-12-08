@@ -23,14 +23,10 @@
 					<li class="nav-item">
 						<router-link to="/" class="nav-link">Contato</router-link>
 					</li>
-					
 				</ul>
-				<button type="button" class="btn buttonBase button-base-custom">
-					<router-link to="/entrar">Entrar</router-link>
-				</button>
-				<button type="button" class="btn buttonBase">
-					<router-link to="/cadastre-se">cadastre-se</router-link>
-				</button>
+
+				<router-link to="/entrar" class="btn buttonBase button-base-custom">Entrar</router-link>
+				<router-link to="/cadastre-se" class="btn buttonBase">cadastre-se</router-link>
 
 			</div>
 		</div>

@@ -1,7 +1,9 @@
 <template>
-  <main id="app">
-    <router-view></router-view>
-  </main>
+  <header id="app">
+    <Navigation> </Navigation>
+    <section class="header-banner">
+    </section>
+  </header>
 </template>
 
 <script>

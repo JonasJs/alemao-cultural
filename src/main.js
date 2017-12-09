@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//Firebase
+import '@/firebase/firebase';
+import VueFire from 'vuefire';
+
+Vue.use(VueFire);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -18,7 +18,7 @@
 							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 						</div>
 						<div class="login-buttons">
-							<router-link to="/entrar" class="btn buttonBase ">Entrar</router-link>
+							<router-link to="" class="btn buttonBase" v-on:click="login()" >Entrar</router-link>
 							<router-link to="/cadastre-se" class="btn buttonBase button-base-custom">cadastre-se</router-link>
 						</div>
 					</form>
@@ -29,11 +29,18 @@
 </template>
 
 <script>
+// Adiciona o firebase
+import { auth } from '@/firebase/firebase';
 export default {
   name: 'Login',
   data (){
     return {
     }
-  }
+  },
+  methods:{
+    	login(){
+    		this.$router.replac('/')
+    	}
+    }
 }
 </script>

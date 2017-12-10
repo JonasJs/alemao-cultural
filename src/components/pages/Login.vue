@@ -11,14 +11,14 @@
 						<hr>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email</label>
-							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="email">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Senha</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="password">
 						</div>
 						<div class="login-buttons">
-							<router-link to="" class="btn buttonBase" v-on:click="login()" >Entrar</router-link>
+							<button class="btn buttonBase" v-on:click="login()" >Entrar</button>
 							<router-link to="/cadastre-se" class="btn buttonBase button-base-custom">cadastre-se</router-link>
 						</div>
 					</form>
@@ -35,11 +35,24 @@ export default {
   name: 'Login',
   data (){
     return {
+    	email: '',
+    	password: ''
     }
   },
   methods:{
     	login(){
-    		this.$router.replac('/')
+    		auth.signInWithEmailAndPassword(this.email, this.password).then(
+    			(user) =>{
+					auth.signInWithEmailAndPassword(this.email, this.password).then(
+						(user) =>{
+							this.$router.replace('profile');	
+						}
+					)	
+    			},
+    			(err) =>{
+    				console.log('Ops' + err.message);
+    			}
+    		)
     	}
     }
 }

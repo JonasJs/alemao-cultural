@@ -1,6 +1,8 @@
 <template>
   <main id="app">
-    <router-view></router-view>
+  	<transition name="pagina">
+    	<router-view></router-view>
+    </transition>
   </main>
 </template>
 
@@ -14,4 +16,13 @@ export default {
   }
 }
 </script>
+
+<style>
+	.pagina-enter-active, .pagina-leave-active {
+    transition: opacity .3s
+  }
+  .pagina-enter, .pagina-leave-active {
+    opacity: 0
+  }
+</style>
 

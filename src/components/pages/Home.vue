@@ -13,6 +13,11 @@ export default {
   name: 'app',
   components:{
     Navigation
+  },
+  data(){
+  	return{
+  		
+  	}
   }
 }
 </script>

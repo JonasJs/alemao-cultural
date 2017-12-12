@@ -1,0 +1,51 @@
+//Categorias
+.categories{
+	box-shadow: 16px 3px 52px rgba(42,34,64,0.1113);
+	font-weight:500;
+	ul{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-transform: uppercase;
+		
+		li:first-child {
+			box-shadow: 24px -4px 33px rgba(42,34,64,0.0300);
+			text-align:center;
+			padding: 20px;
+			a{
+				color:$colorHoverText;
+			}
+		}
+		li{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100px;
+			width: calc(100% / 5);
+			a{
+				color:$colorText;
+				&:hover{
+					color:#5e6569;
+				}
+			}
+			
+		}
+	}
+}
+
+//Eventos da semana
+
+.events-Week{
+	margin-top:64px;
+	h3{
+		font-size: 24px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color:$colorBlur;
+	}
+	p{
+		font-size: 16px;
+		color:#A8B2B9;
+	}
+
+}

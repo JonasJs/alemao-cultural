@@ -22,10 +22,6 @@ let router = new Router({
       redirect: '/entrar'
     },
     {
-      path:'/home',
-      redirect: '/entrar'
-    },
-    {
       path: '/',
       name: 'Home',
       component: Home,
@@ -56,7 +52,8 @@ let router = new Router({
       path: '/cadastre-se',
       name: 'SignUp',
       component: SignUp
-    }
+    },
+
   ]
 })
 

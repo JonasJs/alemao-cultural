@@ -5,6 +5,7 @@
 	margin: 0;
 	padding:0;
 	font-family: 'Montserrat', sans-serif;
+	list-style: none;
 	a:hover{
 		text-decoration: none;
 	}
@@ -20,9 +21,11 @@ body,html, #app{
 
 //Components Shared
 @import "components/shared/navigation";
+@import "components/shared/header";
 
 //Components Pages
 @import "components/pages/login";
+@import "components/pages/home";
 
 //Styles Global
 

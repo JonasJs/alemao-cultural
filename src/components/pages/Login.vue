@@ -46,7 +46,7 @@ export default {
     			(user) =>{
 					auth.signInWithEmailAndPassword(this.email, this.password).then(
 						(user) =>{
-							this.$router.replace('perfil');	
+							this.$router.replace('perfil/adicionar');	
 						}
 					)	
     			},

@@ -77,7 +77,7 @@ export default {
 				//Registra os usuarios
 				 auth.createUserWithEmailAndPassword(this.email, this.password).then(
 					(user) => {
-						this.$router.replace('profile');
+						this.$router.replace('perfil/adicionar');
 					},
 					(err)=>{
 						console.log('Ops' + err.message);

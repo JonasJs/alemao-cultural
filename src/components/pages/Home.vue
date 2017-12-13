@@ -11,11 +11,11 @@
     <section class="categories">
     	<div class="container">
     		<ul>
-    			<li><a href="">Algumas CATEGORIAS</a></li>
-    			<li><a href="">TECNOLOGIA</a></li>
-    			<li><a href="">esporte</a></li>
-    			<li><a href="">educação</a></li>
-    			<li><a href="">cultura</a></li>
+    			<li><router-link to="/">Algumas CATEGORIAS</router-link></li>
+    			<li><router-link to="/" href="">TECNOLOGIA</router-link></li>
+    			<li><router-link to="/" href="">esporte</router-link></li>
+    			<li><router-link to="/" href="">educação</router-link></li>
+    			<li><router-link to="/" href="">cultura</router-link></li>
     		</ul>
     	</div>
     </section>

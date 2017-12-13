@@ -98,6 +98,8 @@ export default {
         this.newEvent.event_summary = '';
         this.newEvent.category = ''
         this.createdSuccessfully = true;
+        var texto = this.newEvent.description;
+        var n = texto.split('\n').length;
       }
   	}
   }

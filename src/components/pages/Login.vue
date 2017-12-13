@@ -6,6 +6,7 @@
 					<a class="navbar-brand" href="#">Alemão Cultura</a>
 				</div>
 				<div class="col-6 box-login-form">
+					
 					<form>
 						<h2>Login</h2>
 						<hr>
@@ -45,7 +46,7 @@ export default {
     			(user) =>{
 					auth.signInWithEmailAndPassword(this.email, this.password).then(
 						(user) =>{
-							this.$router.replace('profile');	
+							this.$router.replace('perfil');	
 						}
 					)	
     			},

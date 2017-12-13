@@ -1,6 +1,10 @@
 <template>
-  <header id="app">
-    <h1>teste</h1>
+  <header id="profile">
+    <Navigation> </Navigation>
+    <div class="container">
+      <h1>Seus evento</h1>
+    </div>
+    
 	<br>
 	<br>
     <button v-on:click="logout"> SAIR </button>
@@ -9,10 +13,18 @@
 
 <script>
 // Adiciona o firebase
-import { auth } from '@/firebase/firebase';
+import { auth, eventRef } from '@/firebase/firebase';
+// Components
+import Navigation from '@/components/shared/Navigation';
 
 export default {
-  name: 'Perfil',
+  name: 'Profile',
+  firebase: {
+    events: eventRef
+  },
+  components:{
+    Navigation
+  },
   methods:{
   	logout(){
   		auth.signOut().then(() =>{

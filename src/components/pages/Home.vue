@@ -23,8 +23,19 @@
     	<div class="container">
     		<h3>Eventos da semana</h3>
     		<p>Esses são os eventos que iram rola essa semana.</p>
-      
-    	</div>
+        <div class="card-group">
+          <div class="col-4" v-for="(event, count) in events" v-if="count < 3">
+            <Slide :image="event.image" :title="event.title" :description="event.description" :date="event.date" :link="`events/${event['.key']}`" > </Slide> 
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="header-banner">
+      <div class="container">
+        <h1>Sobre</h1>
+        <p>Encontre em poucos clicks o evento que esta<br>acontecendo na sua localizada !</p>
+        <a  class="btn buttonBase">Ver Eventos</a>
+      </div>
     </section>
     <br>
     <br>
@@ -35,18 +46,25 @@
 
 <script>
 
+
+// Adiciona o firebase
+import { auth, eventRef } from '@/firebase/firebase';
+
 import Navigation from '@/components/shared/Navigation';
-import slide from '@/components/shared/slide';
+import Slide from '@/components/shared/Slide';
 
 export default {
   name: 'app',
+  firebase: {
+    events: eventRef
+  },
   components:{
-    Navigation,
-    slide
+    'Navigation': Navigation,
+    'Slide': Slide
   },
   data(){
   	return{
-  		
+      
   	}
   }
 }

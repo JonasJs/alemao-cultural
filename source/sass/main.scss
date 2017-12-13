@@ -26,6 +26,7 @@ body,html, #app{
 //Components Pages
 @import "components/pages/login";
 @import "components/pages/home";
+@import "components/pages/addEvents";
 
 //Styles Global
 
@@ -68,4 +69,11 @@ body,html, #app{
 		color:$colorBlur;
 		box-shadow: 0px 2px 10px rgba(0,0,0,0.25);
 	} 
+}
+
+h3.title{
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color:$colorBlur;
 }

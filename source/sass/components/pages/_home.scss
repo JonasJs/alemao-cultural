@@ -42,10 +42,59 @@
 		font-weight: bold;
 		text-transform: uppercase;
 		color:$colorBlur;
+		margin-top: 16px;
 	}
 	p{
 		font-size: 16px;
 		color:#A8B2B9;
 	}
+	.card-group{
+		.card{
+			box-shadow: 4px 0px 42px rgba(42, 34, 64, 0.1413);
+			&:hover{
+				box-shadow:4px 0px 43px rgba(42,34,64,0.2313);
+			}
+			.card-body{
+				padding: 16px;
+				.card-title{
+					font-weight: 600;
+					font-size: 20px;
+					margin: 0;
+				}
+				p{
+					margin:0;
+					font-weight: 500;
+					font-size: 12px;
+					color: #346FF1;
+				}
+				hr{
+					margin:16px 0;
+					border-top: 1px solid #F7F7F7;
+				}
+				p.card-text{
+					font-weight: normal;
+					font-size: 16px;
+					color: $colorText;
 
+				}
+				.card-more{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;	
+					.btn{
+						font-weight: bold;
+						font-size: 14px;
+						color: #6B6B6B;
+						margin:0;
+						i{
+							margin-right: 8px;
+						}
+					}
+					a.btn:hover{
+						color:#484848;
+					}
+				}
+			}	
+		}
+	}
 }

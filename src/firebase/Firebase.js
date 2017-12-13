@@ -12,8 +12,6 @@ const app = initializeApp({
 });
 // Conecta com o db
 export const db = app.database();
-// Faz referencia
-export const eventRef = db.ref('event');
-
 export const auth = app.auth();
-
+// Faz referencia
+export const eventRef = db.ref('events');

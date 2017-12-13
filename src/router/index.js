@@ -6,6 +6,7 @@ import Home from '@/components/pages/Home';
 import Login from '@/components/pages/Login';
 import SignUp from '@/components/pages/SignUp';
 import Profile from '@/components/pages/profile';
+import addEvents from '@/components/pages/addEvents';
 
 import Events from '@/components/pages/Events'
 
@@ -18,17 +19,21 @@ Vue.use(Router)
 let router = new Router({
   routes: [
     {
-      path:'*',
-      redirect: '/entrar'
-    },
-    {
       path: '/',
       name: 'Home',
       component: Home,
       
     },
     {
-      path: '/profile',
+      path: '/perfil/adicionar',
+      name: 'addEvents',
+      component: addEvents,
+      meta:{
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/perfil',
       name: 'Profile',
       component: Profile,
       meta:{
@@ -36,12 +41,10 @@ let router = new Router({
       }
     },
     {
-      path: '/events',
+      path: '/events/:key',
       name: 'Events',
-      component: Events,
-      meta:{
-        requiresAuth: true
-      }
+      props: true,
+      component: Events
     },
     {
       path: '/entrar',
@@ -63,7 +66,6 @@ router.beforeEach((to, from, next) => {
 
   if(requiresAuth && !currentUser) next('entrar')
   else next()
-
 });
 
 export default router

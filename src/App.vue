@@ -8,12 +8,8 @@
 
 <script>
 
-import Navigation from '@/components/shared/Navigation';
 export default {
-  name: 'app',
-  components:{
-    Navigation
-  }
+  name: 'app'
 }
 </script>
 

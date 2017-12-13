@@ -20,12 +20,26 @@
             <input type="text" class="form-control"  placeholder="Url da imagem" v-model="newEvent.image">
           </div>
           <div class="form-group">
+            <label for="exampleFormControlSelect1">Categoria</label>
+            <select class="form-control" value="Tecnologia" v-model="newEvent.category" >
+              <option>Tecnologia</option>
+              <option>Família</option>
+              <option>Saúde</option>
+              <option>Esporte</option>
+              <option>Fotografia</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="exampleFormControlInput1">Data:</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Digite a data da seu evento" v-model="newEvent.date">
           </div>
           <div class="form-group">
+            <label for="exampleFormControlTextarea1">Resumo do evento:</label>
+            <textarea class="form-control" maxlength="173" rows="2" v-model="newEvent.event_summary" placeholder="Fale sobre seu evento usando menos de 173 caracteres"></textarea>
+          </div>
+          <div class="form-group">
             <label for="exampleFormControlTextarea1">Sobre o evento:</label>
-            <textarea class="form-control" rows="3" v-model="newEvent.description"></textarea>
+            <textarea class="form-control" rows="5" v-model="newEvent.description"></textarea>
           </div>
           <button class="btn buttonBase">Criar</button>
         </form>
@@ -34,16 +48,8 @@
         <h3 class="title">Seus Eventos</h3>
         <hr>
         <div class="card-group">
-          <div class="col-4" v-for="event in events" >
-            <div class="card" >
-              <img class="card-img-top" v-bind:src="event.image" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">{{event.title}}</h4>
-                <p class="card-text">{{event.description}}</p>
-                <p class="card-text"><small class="text-muted">{{event.date}}</small></p>
-                <router-link :to=" `events/${event['.key']}`" class="btn buttonBase">cadastre-se</router-link>
-              </div>
-            </div>
+          <div class="col-4" v-for="event in events">
+            <Slide :image="event.image" :title="event.title" :description="event.description" :date="event.date" :link="`events/${event['.key']}`" > </Slide> 
           </div>
         </div>
       </div>
@@ -56,13 +62,16 @@
 import { auth, eventRef } from '@/firebase/firebase';
 
 import Navigation from '@/components/shared/Navigation';
+import Slide from '@/components/shared/Slide';
+
 export default {
   name: 'addEvents',
   firebase: {
     events: eventRef
   },
     components:{
-    'Navigation': Navigation
+    'Navigation': Navigation,
+    'Slide':Slide
   },
   data(){
   	return {
@@ -71,6 +80,8 @@ export default {
   			description: '',
         date: '',
         image: '',
+        event_summary: '',
+        category: '',
         id_user: ''
   		},
       createdSuccessfully: false
@@ -80,10 +91,12 @@ export default {
   	addEvent(){
       if (eventRef.push(this.newEvent)) {
         console.log('sim');
-        this.title = '';
-        this.description = '';
-        this.date = '';
-        this.image = '';
+        this.newEvent.title = '';
+        this.newEvent.description = '';
+        this.newEvent.date = '';
+        this.newEvent.image = '';
+        this.newEvent.event_summary = '';
+        this.newEvent.category = ''
         this.createdSuccessfully = true;
       }
   	}

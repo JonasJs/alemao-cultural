@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-lg ">
 		<div class="container">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+				<span class="fa fa-bars" aria-hidden="true"></span>
 			</button>
 			<a class="navbar-brand" href="#">Alemão Cultura</a>
 

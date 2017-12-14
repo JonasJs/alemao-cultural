@@ -7,6 +7,7 @@ import Login from '@/components/pages/Login';
 import SignUp from '@/components/pages/SignUp';
 import Profile from '@/components/pages/profile';
 import addEvents from '@/components/pages/addEvents';
+import searchEvents from '@/components/pages/searchEvents';
 
 import Events from '@/components/pages/Events'
 
@@ -41,7 +42,12 @@ let router = new Router({
       }
     },
     {
-      path: '/events/:key',
+      path: '/buscar',
+      name: 'searchEvents',
+      component: searchEvents,
+    },
+    {
+      path: '/evento/:key',
       name: 'Events',
       props: true,
       component: Events
@@ -60,12 +66,13 @@ let router = new Router({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  let currentUser = auth.currentUser;
-  let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+// router.beforeEach((to, from, next) => {
+//   let currentUser = auth.currentUser;
+//   let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
-  if(requiresAuth && !currentUser) next('entrar')
-  else next()
-});
+//   if(requiresAuth && !currentUser) next('entrar')
+//   else next()
+// });
 
 export default router
+

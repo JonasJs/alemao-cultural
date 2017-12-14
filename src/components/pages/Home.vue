@@ -5,13 +5,13 @@
     	<div class="container">
     		<h1>Alemão cultural</h1>
     		<p>Encontre em poucos clicks o evento que esta<br>acontecendo na sua localizada !</p>
-    		<a  class="btn buttonBase">Ver Eventos</a>
+    		<router-link to="/buscar" class="btn buttonBase">Ver Eventos</router-link>
     	</div>
     </section>
     <section class="categories">
     	<div class="container">
     		<ul>
-    			<li><router-link to="/">Algumas CATEGORIAS</router-link></li>
+    			<li><router-link to="/perfil/adicionar">Algumas CATEGORIAS</router-link></li>
     			<li><router-link to="/" href="">TECNOLOGIA</router-link></li>
     			<li><router-link to="/" href="">esporte</router-link></li>
     			<li><router-link to="/" href="">educação</router-link></li>
@@ -25,7 +25,7 @@
     		<p>Esses são os eventos que iram rola essa semana.</p>
         <div class="card-group">
           <div class="col col-12 col-sm-12 col-xl-4 col-lg-4 col-md-4" v-for="(event, count) in events" v-if="count < 3">
-            <Slide :image="event.image" :title="event.title" :event_summary="event.event_summary" :category="event.category" :date="event.date" :link="`events/${event['.key']}`" > </Slide> 
+            <Slide :image="event.image" :title="event.title" :event_summary="event.event_summary" :category="event.category" :date="event.date" :link="`evento/${event['.key']}`" > </Slide> 
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
             <Slide :image="event.image" :title="event.title" :event_summary="event.event_summary" :category="event.category" :date="event.date" :link="`events/${event['.key']}`" > </Slide> 
           </div>
         </div>
-        <button  class="btn buttonBase">Ver Mais Eventos</button>
+        <router-link to="/buscar" class="btn buttonBase">Ver Mais Eventos</router-link>
       </div>
     </section>
     <section class="header-banner about">

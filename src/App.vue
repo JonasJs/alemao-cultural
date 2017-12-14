@@ -3,13 +3,33 @@
   	<transition name="pagina">
     	<router-view></router-view>
     </transition>
+
   </main>
 </template>
 
 <script>
-
+import { auth } from '@/firebase/firebase';
 export default {
-  name: 'app'
+  name: 'app',
+  dat(){
+    return{
+     
+    }
+  },
+  updated(){
+    // Verifica se o usuario esta logado
+    var user = auth.currentUser;
+    if(this.$route.path === '/perfil/adicionar'){
+      console.log('é igual')
+      if (user) {
+        this.$router.replace('/perfil/adicionar');
+        console.log('sim')
+      } else {
+        this.$router.replace('/entrar');
+         console.log('nao')
+      }
+    }
+  }
 }
 </script>
 

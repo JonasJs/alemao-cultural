@@ -5,6 +5,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueFire from 'vuefire';
+import { auth, eventRef } from '@/firebase/firebase';
 
 // Firebase
 

@@ -10,7 +10,7 @@
     	<br>
       <div class="card-group">
         <div class="col col-12 col-sm-12 col-xl-12 col-lg-12 col-md-12">
-          <Slide :image="event.image" :title="event.title" :event_summary="event.description" :category="event.category" :date="event.date" :link="`events/${event['.key']}`" > </Slide> 
+          <Slide :image="event.image" :title="event.title" :event_summary="event.description" :category="event.category" :date="event.date" :link="`evento/${event['.key']}`" ></Slide> 
         </div>
       </div>
     </div>

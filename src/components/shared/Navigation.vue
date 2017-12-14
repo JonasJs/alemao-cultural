@@ -12,16 +12,16 @@
 						<router-link to="/" class="nav-link">Home</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link to="/" class="nav-link">Buscar Eventos</router-link>
+						<router-link to="/buscar" class="nav-link">Buscar Eventos</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link to="/" class="nav-link">Categorias</router-link>
+						<router-link to="/categorias" class="nav-link">Categorias</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link to="/" class="nav-link">Sobre</router-link>
+						<router-link to="/sobre" class="nav-link">Sobre</router-link>
 					</li>
 					<li class="nav-item">
-						<router-link to="/" class="nav-link">Contato</router-link>
+						<router-link to="/contato" class="nav-link">Contato</router-link>
 					</li>
 				</ul>
 

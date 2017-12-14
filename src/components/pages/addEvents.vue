@@ -48,8 +48,8 @@
         <h3 class="title">Seus Eventos</h3>
         <hr>
         <div class="card-group">
-          <div class="col-4" v-for="event in events">
-            <Slide :image="event.image" :title="event.title" :description="event.description" :date="event.date" :link="`events/${event['.key']}`" > </Slide> 
+          <div class="col-4" v-for="event in events" v-if="event.id_user === newEvent.id_user "  >
+            <Slide :image="event.image" :title="event.title" :description="event.description" :date="event.date" :link="`/evento/${event['.key']}`" > </Slide> 
           </div>
         </div>
       </div>
@@ -87,6 +87,11 @@ export default {
       createdSuccessfully: false
   	}
   },
+  computed:{
+    tste(){
+      return this.newEvent.id_user
+    }
+  },
   methods:{
   	addEvent(){
       if (eventRef.push(this.newEvent)) {
@@ -98,10 +103,17 @@ export default {
         this.newEvent.event_summary = '';
         this.newEvent.category = ''
         this.createdSuccessfully = true;
-        var texto = this.newEvent.description;
-        var n = texto.split('\n').length;
       }
   	}
+  },
+  created() {
+    let _this = this.newEvent
+    var user = auth.currentUser;
+    if (user) {
+      user.providerData.forEach(function (profile) {
+         _this.id_user = profile.uid;
+      });
+    }
   }
 }
 </script>

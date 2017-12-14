@@ -10,6 +10,9 @@
 						<h2>Cadastro</h2>
 						<hr>
 						<div class="form-group">
+						     <small class="regra">{{ erroSend }}</small>
+					    </div>
+						<div class="form-group">
 							<label for="exampleInputEmail1">Email</label>
 							<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Digite seu email" v-model="email">
 							<small>{{ emailError }}</small>
@@ -50,7 +53,7 @@ export default {
 			password: '',
 			repeatPassword: '',
 			passwordError: '',
-
+			erroSend:'',
 			validation: false
 		}
 	},
@@ -80,7 +83,8 @@ export default {
 						this.$router.replace('perfil/adicionar');
 					},
 					(err)=>{
-						console.log('Ops' + err.message);
+						console.log('Usuario ja registrado	');
+						this.erroSend = 'Usuario ja registrado'
 					}
 				);
 			}

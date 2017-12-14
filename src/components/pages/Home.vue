@@ -36,7 +36,7 @@
         <p>Veja mais alguns eventos</p>
         <div class="card-group">
           <div class="col col-12 col-sm-12 col-xl-4 col-lg-4 col-md-4" v-for="(event, count) in events" v-if="count > 3 && count < 10">
-            <Slide :image="event.image" :title="event.title" :event_summary="event.event_summary" :category="event.category" :date="event.date" :link="`events/${event['.key']}`" > </Slide> 
+            <Slide :image="event.image" :title="event.title" :event_summary="event.event_summary" :category="event.category" :date="event.date" :link="`evento/${event['.key']}`" > </Slide> 
           </div>
         </div>
         <router-link to="/buscar" class="btn buttonBase">Ver Mais Eventos</router-link>

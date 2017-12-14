@@ -37,15 +37,15 @@ export default {
   data(){
   	return{
       event: '',
-  		postId: this.$route.params.key
+  		eventId: this.$route.params.key,
   	}
   },
   created() {
-      let _this = this
-      db.ref('/events/' + _this.postId).once('value').then(function (snapshot) {
-        _this.event = snapshot.val();
-      })
-    }
+    let _this = this
+    db.ref('/events/' + _this.eventId).once('value').then(function (snapshot) {
+      _this.event = snapshot.val();
+    });
+  }
 }
 </script>
 

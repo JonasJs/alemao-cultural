@@ -1,4 +1,88 @@
+<<<<<<< HEAD
 *{
 	margin: 0;
 	padding:0;
+=======
+//Font
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+
+*{
+	margin: 0;
+	padding:0;
+	font-family: 'Montserrat', sans-serif;
+	list-style: none;
+	a:hover{
+		text-decoration: none;
+	}
+}
+body,html, #app{
+	height:100%;
+	width:100%;
+}
+
+//variables
+@import "variables";
+//variables
+@import "breakpoint";
+
+
+//Components Shared
+@import "components/shared/navigation";
+@import "components/shared/header";
+
+//Components Pages
+@import "components/pages/login";
+@import "components/pages/home";
+@import "components/pages/addEvents";
+@import "components/pages/viewMore";
+
+//Styles Global
+
+//Logo
+.navbar-brand{
+	color:$colorWhite;
+	font-weight: bold;
+	text-transform: uppercase;
+	&:hover{
+		color:$colorWhite;
+	}
+}
+
+//Button
+.buttonBase{
+	width:200px;
+	height:40px;
+	font-size:14px;
+	font-weight:500;
+	cursor:pointer;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	margin:0;
+	background:$colorBlur;
+	color:$colorWhite;
+	box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+	&:hover{
+		color:$colorWhite;
+		box-shadow: 0px 2px 10px rgba(0,0,0,0.25);
+	}
+}
+
+.button-base-custom{
+	margin: 0 16px 0 32px;
+	border: 2px solid #2A2240;
+	background: none;
+	color: $colorBlur;
+	&:hover{
+		color:$colorBlur;
+		box-shadow: 0px 2px 10px rgba(0,0,0,0.25);
+	} 
+}
+
+h3.title{
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color:$colorBlur;
+>>>>>>> develop
 }
